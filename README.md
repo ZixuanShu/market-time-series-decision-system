@@ -1,8 +1,8 @@
-# 1. Time-series based real-time Stock Trading System Overview
+# 1. An End-to-End Machine Learning Framework for Market Time-Series Decision Making
 
-This project implements an end-to-end machine learning–driven trading framework.
-It automatically collects market data, engineers features, trains predictive models,
-generates daily signals, executes trades using Alpaca, and maintains a full portfolio 
+This project implements an end-to-end machine learning–driven decision framework
+for market time-series data. It automatically collects market data, engineers features, trains predictive models,
+generates daily signals, integrates with broker APIs for execution, and maintains a full portfolio 
 state on a cloud environment.
 
 ---
@@ -73,7 +73,7 @@ The output is a consolidated `wf_df` containing:
 - MarketState  
 - Next-day execution price info  
 
-This guarantees no data leakage and realistic evaluation for backtesting(next section).
+This guarantees no data leakage and realistic evaluation under deployment-like constraints.
 
 ---
 
@@ -83,8 +83,8 @@ A custom execution simulator models a real trading account:
 
 - T+1 open-price execution  
 - Regime-dependent execution parameters  
-- Reinforcement vs. new-position buy logic  
-- Stop-loss / profit-taking rules  
+- Position lifecycle management  
+- Risk & exit constraints
 - Time-based exit  
 - Cooldown system to avoid rapid re-entries  
 - Daily mark-to-market equity calculation  
@@ -99,7 +99,7 @@ Outputs:
 
 # 6. Trading Automation
 
-## 6.1 Alpaca API Integration
+## 6.1 Execution & Broker Integration
 The live trading engine supports:
 
 - automated order routing  
@@ -115,7 +115,7 @@ Daily automation includes:
 1. Scheduled VM startup before market open  
 2. Data ingestion + feature computation  
 3. Daily model refresh  
-4. 9:30 AM automated buy execution  
+4. scheduled pre-market execution
 5. Intraday (5-minute) sell monitoring  
 6. Automatic VM shutdown after market close  
 
@@ -149,7 +149,7 @@ project/
 │ ├── model_training/ # XGBoost training & evaluation
 │ ├── walk_forward/ # Rolling prediction generator
 │ ├── backtest/ # T+1 execution simulator
-│ ├── trading/ # Alpaca integration (buy/sell automation)
+│ ├── execution/ # Alpaca integration (buy/sell automation)
 │ └── helper_utils/ # Shared utilities, env loaders, helpers
 │
 ├── cloud/ # GCP startup scripts, cron tasks, automation configs
