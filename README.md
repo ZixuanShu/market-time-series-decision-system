@@ -1,5 +1,7 @@
 # 1. An End-to-End Machine Learning Framework for Market Time-Series Decision Making
 
+![System Architecture](docs/architecture.png)
+
 This project implements an end-to-end machine learning–driven decision framework
 for market time-series data. It automatically collects market data, engineers features, trains predictive models,
 generates daily signals, integrates with broker APIs for execution, and maintains a full portfolio 
