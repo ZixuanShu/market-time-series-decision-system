@@ -43,8 +43,6 @@ A supervised learning pipeline predicts next-day movement using:
 
 Outputs include prediction probabilities per ticker per day.
 
----
-
 ## 3.2 Market Regime Detection
 
 A lightweight model produces **Bull / Neutral / Bear** market states based on:
