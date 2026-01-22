@@ -115,8 +115,8 @@ Daily automation includes:
 1. Scheduled VM startup before market open  
 2. Data ingestion + feature computation  
 3. Daily model refresh  
-4. scheduled pre-market execution
-5. Intraday (5-minute) sell monitoring  
+4. Scheduled pre-market execution
+5. End of day sell monitoring  
 6. Automatic VM shutdown after market close  
 
 This keeps operational cost minimal while maintaining reliability.
