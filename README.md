@@ -23,7 +23,7 @@ All incoming data is:
 
 - cleaned and aligned by (date, ticker)
 - processed with time-series–aware transformations
-- lagged using `shift(1)` to avoid lookahead bias
+- lagged using time-indexed shifts to avoid lookahead bias
 - enriched with rolling & cross-sectional statistics  
 - saved to versioned CSV files for reproducibility
 
@@ -149,7 +149,7 @@ project/
 │ ├── model_training/ # XGBoost training & evaluation
 │ ├── walk_forward/ # Rolling prediction generator
 │ ├── backtest/ # T+1 execution simulator
-│ ├── execution/ # Alpaca integration (buy/sell automation)
+│ ├── execution/ # Broker integration (buy/sell automation)
 │ └── helper_utils/ # Shared utilities, env loaders, helpers
 │
 ├── cloud/ # GCP startup scripts, cron tasks, automation configs
