@@ -12,7 +12,7 @@ state on a cloud environment.
 ## 2.1 Market Data Sources
 Daily market data is collected from licensed APIs, including:
 
-- OHLCV for selected equities  
+- OHLCV (open, high, low, close, volume) for selected equities  
 - Market index proxies (e.g., SP500)  
 - Volatility indices (e.g., VIX proxy)  
 - News & sentiment metadata  
@@ -43,6 +43,8 @@ A supervised learning pipeline predicts next-day movement using:
 
 Outputs include prediction probabilities per ticker per day.
 
+---
+
 ## 3.2 Market Regime Detection
 
 A lightweight model produces **Bull / Neutral / Bear** market states based on:
@@ -56,7 +58,7 @@ Regime is used as a constraint/gating mechanism for trading execution.
 
 ---
 
-# 4. Walk-Forward Prediction Pipeline
+# 4. Walk-Forward Pipeline
 
 The system performs strict **walk-forward forecasting**:
 
@@ -73,7 +75,7 @@ The output is a consolidated `wf_df` containing:
 - MarketState  
 - Next-day execution price info  
 
-This guarantees no data leakage and realistic evaluation.
+This guarantees no data leakage and realistic evaluation for backtesting(next section).
 
 ---
 
@@ -138,6 +140,7 @@ The model exhibits:
 
 # 8. Repository Structure (Simplified)
 
+```text
 project/
 │
 ├── data/ # Processed market data & intermediate outputs
@@ -153,6 +156,7 @@ project/
 │
 ├── cloud/ # GCP startup scripts, cron tasks, automation configs
 └── README.md
+```
 
 # 9. Key Highlights
 
